@@ -29,6 +29,16 @@ pnpm build
 
 Load `dist/` from `chrome://extensions`, open a GitHub `SKILL.md` or MCP configuration, open the SkillSentry side panel, and choose **Scan page**.
 
+### Publish on Windows
+
+After the project-local GitHub CLI login is available, future pushes use:
+
+```powershell
+.\publish.ps1
+```
+
+The script uses a project-local credential helper and OpenSSL TLS configuration. `.gh/` is ignored and no token is stored in the repository.
+
 ## Security limits
 
 This is a heuristic static checker, not a complete security scanner. A clean report does not prove that a skill is safe. Findings are evidence for review, not automatic permission to execute code. The extension processes page text locally and does not send it to a server.
