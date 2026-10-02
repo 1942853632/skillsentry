@@ -2,6 +2,10 @@
 
 SkillSentry is a local-only Chrome Manifest V3 extension that statically checks Agent Skills, `SKILL.md` files, and MCP configuration pages before you install or run them.
 
+## Interview-ready engineering story
+
+SkillSentry treats tool instructions as a supply-chain boundary. Its scanner separates extraction, normalized findings and policy rules, so every warning has a rule ID and evidence instead of relying on an opaque LLM judgment.
+
 ## Why this project
 
 Agent Skills and MCP tools are executable instructions with access to commands, files, and networks. SkillSentry makes common warning signs visible in the browser without uploading source code or calling a paid model.
@@ -17,6 +21,13 @@ Agent Skills and MCP tools are executable instructions with access to commands, 
 - Explainable score and `safe` / `review` / `danger` verdict
 - Markdown copy and SARIF export for CI/security workflows
 - Deterministic TypeScript rule engine with unit tests
+
+## Repository map
+
+- `src/scanner.ts`: normalized scan pipeline and scoring
+- `src/rules.ts`: explainable security checks
+- `src/content.ts`: page extraction adapter
+- `tests/`: scanner and rule regressions
 
 ## Development
 
